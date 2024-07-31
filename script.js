@@ -10,17 +10,12 @@ function convertToRoman(num) {
     };
 	
 
+  
     let roman = '';
     const keys = Object.keys(obj);
 
     for (let i = 0; i < keys.length; i++) {
         let [letter, value] = obj[keys[i]];
-
-        if (i % 2 === 0 && i < 6 && num >= value - obj[i + 2][1]) {
-            roman += obj[i + 2][0] + letter;
-            num -= value - obj[i + 2][1];
-        }
-
         while (num >= value) {
             roman += letter;
             num -= value;
